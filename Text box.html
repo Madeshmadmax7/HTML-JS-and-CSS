@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        body{
+            background: #456;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 97vh;
+        }
+        #window{
+            width: 400px;
+            background: #d9d9d9;
+            border-radius: 3px;
+            padding: 12px 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #333;
+        }
+        #buttons{
+            float: right;
+            margin-right: 12px;
+        }
+        #buttons a{
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background .3s;
+            -webkit-transition: background .3s;
+        }
+        #minimize{
+            background: #3c6;
+        }
+        #resize{
+            background: #cc3;
+        }
+        #close{
+            background: #cc3;
+        }
+        #title{
+            margin-left: 12px;
+            font-size: 90%;
+        }
+        textarea{
+            width: 96%;
+            max-width: 96%;
+            min-height: 220px;
+            background: #efefef;
+            margin-top: 10px;
+            border: 0;
+            padding: 2%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="window">
+        <div id="buttons">
+            <a href="#" id="minimize"></a>
+            <a href="#" id="resize"></a>
+            <a href="#" id="close"></a>
+        </div>
+        <div id="title">Text Editor</div>
+        <textarea id="textarea"></textarea>
+    </div>
+    <script>
+        var textarea=$('textarea'),speed=80,text='Hello ! How are you';
+        function writeText(text){
+            textarea.text(textarea.text()+text[$('#textarea').text().length]);
+            if(textarea.text().length==text.length){
+                clearInterval(timeout);
+            }
+        }
+        var timeout=setInterval('writeText(text)',speed);
+    </script>
+</body>
+</html>
