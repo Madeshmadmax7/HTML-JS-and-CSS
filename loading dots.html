@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100%;
+            padding: 0;
+            margin: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            width: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .bubble{
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: #1c1c1c;
+        }
+        .bubble-1{
+            animation: pulse .4s ease 0s infinite alternate;
+        }
+        .bubble-2{
+            animation: pulse .4s ease .2s infinite alternate;
+        }
+        .bubble-3{
+            animation: pulse .4s ease .4s infinite alternate;
+        }
+        @keyframes pulse{
+            from{
+                opacity: 1;
+                transform: scale(1);
+            }
+            to{
+                opacity: 0.25;
+                transform: scale(.75);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="spinner-box">
+        <div class="container">
+            <div class="bubble bubble-1"></div>
+            <div class="bubble bubble-2"></div>
+            <div class="bubble bubble-3"></div>
+        </div>
+    </div>
+</body>
+</html>
